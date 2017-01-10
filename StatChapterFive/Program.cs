@@ -58,7 +58,7 @@ namespace StatChapterFive
                 }
             }
             Console.WriteLine(((float)hits / (float)iterations) * 100f + "%");
-            Console.WriteLine("Would you like to see advanced the advanced stats? (Y/N)");
+            Console.WriteLine("Would you like to see the advanced stats? (Y/N)");
             if (Console.Read() == 'y' || Console.Read() == 'Y')
                 PrintTable();
             Console.ReadKey();
