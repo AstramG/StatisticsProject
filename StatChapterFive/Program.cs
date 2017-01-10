@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace StatChapterFive
 {
@@ -20,10 +21,13 @@ namespace StatChapterFive
         private static int octupleHomeTotal;
         private static int total;
 
+        private static Stopwatch watch = new Stopwatch();
+
         public static void Main(string[] args)
         {
             Console.WriteLine("How many iterations would you like to run?");
             iterations = Convert.ToUInt64(Console.ReadLine());
+            watch.Start();
 
             List<int> hit = new List<int>();
             Random random = new Random();
@@ -57,7 +61,9 @@ namespace StatChapterFive
                     }
                 }
             }
-            Console.WriteLine(((float)hits / (float)iterations) * 100f + "%");
+            Console.WriteLine("Your chance to receive a permit is approximately " + ((float)hits / (float)iterations) * 100f + "%");
+            watch.Stop();
+            Console.WriteLine("Operation completed in " + (float) watch.ElapsedMilliseconds / 1000f + " seconds...");
             Console.WriteLine("Would you like to see the advanced stats? (Y/N)");
             if (Console.Read() == 'y' || Console.Read() == 'Y')
                 PrintTable();
@@ -71,13 +77,10 @@ namespace StatChapterFive
 
         private static void PrintTable()
         {
-            Console.WriteLine("Your unit was chosen " + hits + " times out of " + iterations + " iterations.");
-            Console.WriteLine("Total Single Unit Hits: " + singleHomeTotal);
-            Console.WriteLine("Total Double Unit Hits: " + doubleHomeTotal);
-            Console.WriteLine("Total Octuple Unit Hits: " + octupleHomeTotal);
-            Console.WriteLine("Proportion of Single Unit Hits: " + ((float)singleHomeTotal / (float)total * 100f) + "%");
-            Console.WriteLine("Proportion of Double Unit Hits: " + ((float)doubleHomeTotal / (float)total * 100f) + "%");
-            Console.WriteLine("Proportion of Octuple Unit Hits: " + ((float)octupleHomeTotal / (float)total * 100f) + "%");
+            Console.WriteLine("\nYour unit was chosen " + hits + " times out of " + iterations + " iterations.\n");
+            Console.WriteLine("Iteration\tSingle Hits\tDouble Hits\tOctuple Hits");
+            Console.WriteLine(String.Format("Total\t\t{0}\t{1}\t{2}", singleHomeTotal, doubleHomeTotal, octupleHomeTotal));
+            Console.WriteLine(String.Format("Frequency\t{0}%\t{1}%\t{2}%", ((float)singleHomeTotal / (float)total * 100f), ((float)doubleHomeTotal / (float)total * 100f), ((float)octupleHomeTotal / (float)total * 100f)));
         }
 
     }
