@@ -1,0 +1,6 @@
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\bin\Debug\StatChapterFive.exe.config
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\bin\Debug\StatChapterFive.exe
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\bin\Debug\StatChapterFive.pdb
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\obj\Debug\StatChapterFive.csprojResolveAssemblyReference.cache
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\obj\Debug\StatChapterFive.exe
+c:\users\astra\documents\visual studio 2015\Projects\StatChapterFive\StatChapterFive\obj\Debug\StatChapterFive.pdb
